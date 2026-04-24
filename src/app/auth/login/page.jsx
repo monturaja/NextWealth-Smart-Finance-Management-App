@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useLayoutEffect, useRef } from "react";
+import React, { useState, useLayoutEffect, useRef, Suspense } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { 
@@ -17,7 +17,7 @@ import {
 import Link from "next/link";
 import gsap from "gsap";
 
-export default function IdentityGateway() {
+function IdentityGatewayContent() {
   const searchParams = useSearchParams();
   const initialMode = searchParams.get("mode") === "signup" ? "signup" : "login";
   const [mode, setMode] = useState(initialMode); // 'login' or 'signup'
@@ -290,5 +290,17 @@ export default function IdentityGateway() {
       </div>
       
     </div>
+  );
+}
+
+export default function IdentityGateway() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#050505] flex items-center justify-center text-white font-black uppercase tracking-[0.5em]">
+        Loading Neural Hub...
+      </div>
+    }>
+      <IdentityGatewayContent />
+    </Suspense>
   );
 }
