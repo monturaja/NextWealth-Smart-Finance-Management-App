@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import connectToDatabase from "@/lib/mongodb";
 import Audit from "@/models/Audit";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     await connectToDatabase();
