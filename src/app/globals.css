@@ -10,6 +10,35 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* User Custom Brand Palette Overrides */
+  
+  /* #0F2854 (Deep Navy) - mapped to dark slate/indigo */
+  --color-slate-950: #0a1b38; 
+  --color-slate-900: #0F2854;
+  --color-slate-800: #143570;
+  --color-slate-700: #1a4594;
+  --color-indigo-900: #0F2854;
+  --color-indigo-800: #143570;
+  --color-indigo-700: #163d70;
+  
+  /* #1C4D8D (Medium Blue) - mapped to primary interactive colors */
+  --color-indigo-600: #1C4D8D;
+  --color-blue-600: #1C4D8D;
+  --color-blue-700: #1C4D8D;
+  
+  /* #4988C4 (Light Blue) - mapped to secondary/hover interactive colors */
+  --color-indigo-500: #4988C4;
+  --color-indigo-400: #6ca5df;
+  --color-blue-500: #4988C4;
+  --color-blue-400: #6ca5df;
+  
+  /* #BDE8F5 (Very Light Cyan/Ice Blue) - mapped to highlights/soft backgrounds */
+  --color-indigo-100: #93d7ec;
+  --color-indigo-50: #BDE8F5;
+  --color-blue-100: #93d7ec;
+  --color-blue-50: #BDE8F5;
+  --color-slate-50: #f0fbfc; 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +52,52 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Admin Scrollbar */
+.custom-admin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-admin-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.custom-admin-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #ef4444);
+  border-radius: 10px;
+}
+
+.custom-admin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ef4444;
+}
+
+/* Chrome, Safari, Edge, Opera */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track,
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+.dark ::-webkit-scrollbar-thumb,
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #334155;
 }
